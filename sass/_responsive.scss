@@ -1,0 +1,17 @@
+@mixin horizontal__1 {
+    @media (max-width:$horizontal__1){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width:$tablet){
+        @content;
+    }
+}
+
+@mixin celular {
+    @media (max-width:$celular){
+        @content;
+    }
+}
