@@ -25,7 +25,6 @@ const registrarPiloto = () => {
 
     let entradaEquipo = prompt("Ingrese su escudería").toUpperCase();
 
-    // Verificar si el número de coche ya está registrado
     const numeroCocheExistente = pilotosRegistrados.find(piloto => piloto.id === entradaID);
     if (numeroCocheExistente) {
         alert(`El número de coche ${entradaID} ya está registrado.`);
