@@ -1,0 +1,2 @@
+guardarCarritoLS(carrito);
+mostrarCarrito();

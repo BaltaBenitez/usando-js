@@ -5,43 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fernando Alonso</title>
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <!-- fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- BOOTSTRAPs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
-        <a href="index.html" id="header__logo" ><h2 class="logo__h2">FERNANDO ALONSO <span class="logo__h2--span">14</span></h2></a>
+        <a href="../index.html" id="header__logo" ><h2 class="logo__h2">FERNANDO ALONSO <span class="logo__h2--span">14</span></h2></a>
         <button id="abrir" class="abrir__menu"><i class="fa-solid fa-bars"></i></button>
         <nav id="nav__container" class="nav__container">
             <button id="cerrar" class="cerrar__menu"><i class="fa-solid fa-xmark"></i></button>
             <ul class="nav__list">
-                <li><a href="./pages/store.html">STORE</a></li>
-                <li><a href="./pages/gallery.html">GALLERY</a></li>
-                <li><a href="./pages/about.html">ABOUT</a></li>
+                <li><a href="store.html">STORE</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="about.html">ABOUT</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="hero___content--grid">
-            <div class="hero__text">
-                <h5>Waiting #33</h5>
-                <h4>He drives the AMR-23</h4>
-                <h1>Aston Martin</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <br>
-                <a href="https://www.youtube.com/@astonmartinf1team" class="hero__a">Watching in <i class="fa-brands fa-youtube"></i></a>
-            </div>
+        <div class="container my-4">
+            <a href="#" id="icon__carrito" class="position-relative">
+                <i class="fas fa-cart-shopping fa-lg"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+        </div>
+        
+        <div class="container my-5">
+            <div id="carrito__HTML" class="row"></div>
+        </div>
 
-            <div class="hero__img">
-                <img src="main__f1.png">
-            </div>
-        </section>
     </main>
     <footer>
         <div class="div__redes">
@@ -51,6 +45,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="DOM.js"></script>
+    <script src="../DOM.js"></script>
+    <script src="../workshop/funciones.js"></script>
+    <!-- <script src="../workshop/carrito.js"></script> -->
 </body>
 </html>
