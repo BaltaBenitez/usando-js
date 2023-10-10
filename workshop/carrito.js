@@ -1,2 +1,2 @@
-guardarCarritoLS(carrito);
 mostrarCarrito();
+MostarBotonCarrito();

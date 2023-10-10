@@ -22,7 +22,7 @@ const mostrarProductos = () => {
                     <div class="card-body">
                         <h5 class="card-title">${producto.nombre}</h5>
                         <p class="card-text">$${producto.precio}</p>
-                        <a href="#" class="btn btn-warning" onclick="AgregarAlCarrito(${producto.id})">Agregar</a>
+                        <a href="#" class="btn btn-warning" onclick="agregarAlCarrito(${producto.id})">Agregar</a>
                     </div>
                 </div>
             </div>`;
@@ -33,19 +33,32 @@ const mostrarProductos = () => {
 
 const mostrarCarrito = () => {
     const productos = cargarCarritoLS();
-    let contenidoHTML = `<table class="table">`;
+    let contenidoHTML;
 
-    productos.forEach(producto => {
-        contenidoHTML += `
-            <tr>
-                <td><img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}"></td>
-                <td><p class="card-text">${producto.nombre}</p></td>
-                <td><p class="card-text">$${producto.precio}</p></td>
-                <td><i class="fa-solid fa-trash"></i></td>
+    if (cantProductosCarrito() > 0){
+        contenidoHTML = `<table class="table">`;
+        
+        productos.forEach(producto => {
+            contenidoHTML += `<tr>
+            <td><img src="${producto.imagen}" alt="${producto.nombre}" width="64"></td>
+            <td class="align-middle">${producto.nombre}</td>
+            <td class="align-middle">${producto.precio}</td>
+            <td class="align-middle text-end"><i class="fa-solid fa-trash text-danger" onclick="EliminarProductor(${producto.id})"></i></td>
             </tr>`;
-    });
+        });
+        
+        contenidoHTML += `<tr>
+        <td class="text-end"></td>
+        <td colspan="2" class="text-end"> Total $ ${sumaProductosCarrito()}</td>
+        <td></td>
+        </tr>
+        </table>`;
+    } else {
+        contenidoHTML += `<div class="alert alert-danger" role="alert">
+        El carrito esta vacio
+      </div>`
+    };
 
-    contenidoHTML += `</table>`;
     document.getElementById("carrito__HTML").innerHTML = contenidoHTML;
 };
 
@@ -56,23 +69,45 @@ const guardarCarritoLS = (carrito) => {
 const cargarCarritoLS = () => {
     return JSON.parse(localStorage.getItem("carrito")) || [];
 }
-const AgregarAlCarrito = (id) => {
+
+const agregarAlCarrito = (id) =>{
     const carrito = cargarCarritoLS();
-    const producto = buscarProducto(id);
+    const producto = buscarPructos(id);
     carrito.push(producto);
     guardarCarritoLS(carrito);
+    MostarBotonCarrito();
 };
 
-const buscarProducto = (id) => {
+const EliminarProductor = (id) => {
+    const carrito = cargarCarritoLS();
+    const nuevoCarrito = carrito.filter(item => item.id !== item.id);
+    guardarCarritoLS(nuevoCarrito);
+    mostrarCarrito();
+    MostarBotonCarrito();
+};
+
+const buscarPructos = (id) => {
     const productos = cargarProductosLS();
-    let producto = productos.find(item => item.id === id);
+    let producto = productos.find(item => item.id === item.id);
     return producto;
 };
 
-const estaEnCarrito = (id) => {
-    const carrito = cargarCarritoLS();
-    return carrito.some(item => item.id === id);
+const estaEnElCarrito = (id) => {
+    const productos = cargarProductosLS();
+    return productos.some(item => item.id === item.id)
 };
 
-guardarCarritoLS(carrito);
-mostrarCarrito();
+const cantProductosCarrito = () => {
+    const carrito = cargarCarritoLS();
+    return carrito.leght;
+};
+
+const sumaProductosCarrito = () => {
+    const carrito = cargarCarritoLS();
+    return carrito.reduce((acumulador, item) => acumulador += item.precio, 0);
+};
+
+const MostarBotonCarrito = () => {
+    let totalCarrito = document.getElementById("totalCarrito");
+    totalCarrito.innerHTML = cantProductosCarrito();
+}
