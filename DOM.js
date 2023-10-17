@@ -9,7 +9,6 @@ abrir.addEventListener("click", () => {
 cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
-
 //Gallery
 const images = document.querySelectorAll(".gallery__img");
 

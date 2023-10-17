@@ -64,7 +64,7 @@ header{
     color: white;
 }
 .nav__list a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid yellowgreen;
 }
 
 /* INDEX */
@@ -239,7 +239,7 @@ img {
     
     .nav__list a:hover {
         border-bottom: none;
-        color: #272424;
+        color: yellowgreen;
     }
 
     /* INDEX MAIN */
