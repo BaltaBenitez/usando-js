@@ -11,7 +11,7 @@
     width: 6px;
 }
 *::-webkit-scrollbar-thumb {
-    background: rgb(166, 234, 64);
+    background: yellowgreen;
     width: 5px;
     border-radius: 6px;
     opacity: 0.6;
@@ -28,6 +28,7 @@ header{
     justify-content: space-between;
     padding: 2rem;
     background-color: #0d260f;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .abrir__menu, 
@@ -49,7 +50,7 @@ header{
 }
 
 .logo__h2--span{
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid yellowgreen;
 }
 
 .nav__list{
@@ -67,7 +68,6 @@ header{
 }
 
 /* INDEX */
-
 .hero___content--grid{
     height: 100%;
     width: 100%;
@@ -92,7 +92,7 @@ header{
 
 .hero__a:hover,
 .hero__a i:hover {
-    color: rgb(0, 136, 255);
+    color: #0d6efd;
 }
 
 .hero__img img{
@@ -117,13 +117,38 @@ header{
 }
 
 .div__redes i:hover {
-    color: #272424;
+    color: yellowgreen;
 }
 
 p {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+}
+
+/* GALLERY */
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.gallery__div{
+    flex: 25%;
+}
+
+.gallery__div img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.masFotos{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #6f42c1;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 /* ABOUT */
@@ -133,6 +158,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .infoAbout__div--1,
@@ -160,9 +186,14 @@ img {
     height: auto;
 }
 
+/* REDES */
+.social-icons i:hover{
+    font-size: 21px;
+    color: yellowgreen;
+}
+
 /* Medida para "TABLET"  */
 @media (max-width: 700px){
-    
     .abrir__menu,
     .cerrar__menu {
         display: block;
@@ -193,11 +224,13 @@ img {
         background-color: #0d260f;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        z-index: 1000;
     }
 
     .nav__container.visible {
         opacity: 1;
         visibility: visible;
+        z-index: 1000;
     }
     .nav__list{
         flex-direction: column;
@@ -240,5 +273,13 @@ img {
     .infoAbout__div--1,
     .infoAbout__div--2 {
         flex-basis: 100%;
+    }
+
+    /* GALLERY */
+    .gallery{
+        padding: 10px;
+    }
+    .gallery__div{
+        flex: 85%;
     }
 }

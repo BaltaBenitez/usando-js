@@ -1,3 +1,3 @@
-guardarProductosLS(productos)
-mostrarProductos();
-MostarBotonCarrito();
+guardarProductosLS(productos);
+renderProductos();
+renderBotonCarrito();

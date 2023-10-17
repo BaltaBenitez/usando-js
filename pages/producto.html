@@ -28,25 +28,25 @@
         </nav>
     </header>
     <main>
-        <section class="infoAbout__container" >
-            <div class="infoAbout__div--1">
-                <div class="infoAbout__text">
-                    <h3>Nuestra Pasión por la F1</h3>
-                    <p>Somos apasionados por la Fórmula 1 y estamos entusiasmados de compartir nuestro conocimiento contigo. Nuestra historia comenzó con un pequeño workshop donde exploramos el mundo de la F1, específicamente enfocados en el talentoso piloto Fernando Alonso.</p>
-                    <p>A lo largo de los años, hemos acumulado una vasta cantidad de información sobre su carrera, logros y contribuciones a la industria automovilística. Estamos aquí para brindarte una visión única y apasionada sobre su vida en la pista y su emocionante aventura con Aston Martin.</p>
+        <div class="col d-flex align-items-center my-3">
+            <a href="carrito.html" id="botonCarrito" title="Ir al Carrito" class="btn btn-warning position-relative">
+                <img src="../images/cart.svg" width="24" alt="Carrito"><span id="totalCarrito" class="position-absolute translate-middle badge rounded-pill bg-danger"></span>
+            </a>
+        </div>
+        
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-4 offset-md-2 bg-success">
+                    <img id="imagenProducto" class="img-fluid" />
                 </div>
-                <img src="../img__about/alonso__driving.jpg" alt="" srcset="">
-            </div>
-            
-            <div class="infoAbout__div--2">
-                <img src="../img__about/alonso__strol.jpg" alt="" srcset="">
-                <div class="infoAbout__text">
-                    <h3>Estilo en la Pista: Moda de Aston Martin</h3>
-                    <p>Nuestro amor por la Fórmula 1 va más allá de las estadísticas y los números. Nos fascinan los detalles, como las increíbles remeras y camperas que los equipos usan en la parrilla de salida.</p>
-                    <p>En nuestro workshop, hemos investigado y analizado la moda y el estilo que rodea a Alonso y su equipo en Aston Martin. Te invitamos a explorar con nosotros la elegancia y la innovación detrás de estas prendas que combinan el mundo del automovilismo y la moda de manera única.</p>
+                <div class="col-md-4 bg-success">
+                    <h2 id="tituloProducto"></h2>
+                    <p id="descripcionProducto"></p>
+                    <p id="precioProducto"></p>
+                    <p id="botonAgregar"></p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
     <footer>
         <section class="redes__box">
@@ -62,5 +62,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../DOM.js"></script>
+    <script src="../workshop/funciones.js"></script>
+    <script src="../workshop/producto.js"></script>
 </body>
 </html>
