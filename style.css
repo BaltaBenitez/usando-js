@@ -127,6 +127,16 @@ p {
 }
 
 /* GALLERY */
+#textoBusqueda{
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+#btnBuscar{
+    background-color: yellowgreen;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .gallery{
     display: flex;
     flex-wrap: wrap;

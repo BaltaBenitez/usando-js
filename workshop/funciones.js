@@ -108,6 +108,17 @@ const agregarProductoCarrito = (id) => {
 
     guardarCarritoLS(carrito);
     renderBotonCarrito();
+
+    Toastify({
+        text: "Prroducto agregado correctamente en el carrito.",
+        duration: 2000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "lef", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        backgroundColor: "#ffc107",
+        onClick: function(){} // Callback after click
+      }).showToast();
 }
 
 const eliminarProductoCarrito = (id) => {
