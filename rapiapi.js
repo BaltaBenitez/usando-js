@@ -13,8 +13,8 @@ const API = async () => {
         const response = await fetch(url, options);
         const result = await response.json();
         //console.log(result);
-        
-        let conteHTML =` <div class="container text-center"> 
+
+        let conteHTML =`<div class="container text-center"> 
         <div class="row">
         <div class="col-md-12">
             <img src="${result.response[0].image}" class="mx-auto text-center" alt="Circuito">
@@ -24,12 +24,12 @@ const API = async () => {
             <p>Tiene una distancia de: ${result.response[0].length}</p>
         </div>
         </div>`;
-        document.getElementById("resultado").innerHTML = conteHTML;
+        document.getElementById("resultadoCircuito").innerHTML = conteHTML;
 
     } catch (error) {
-        document.getElementById("resultado").innerHTML = `<h5 class="text-center my-5">No se encontró el Circuito</h5>`;
+        //document.getElementById("resultadoCircuito").innerHTML = `<h5 class="text-center my-5">No se encontró el Circuito.</h5>`;
+        document.getElementById("resultadoCircuito").innerHTML = `<h3 class="alert alert-warning my-5 text-center" role="alert">No se encontró el Circuito.</h3>`;
     }
-
 }
 
 document.getElementById("btnBuscar").addEventListener("click", API);
