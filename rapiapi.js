@@ -13,16 +13,15 @@ const API = async () => {
         const response = await fetch(url, options);
         const result = await response.json();
         //console.log(result);
+        
         let conteHTML =` <div class="container text-center"> 
         <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-12">
             <img src="${result.response[0].image}" class="mx-auto text-center" alt="Circuito">
-        </div>
-        <div class="col-md-10">
-            <h3>${result.response[0].name}</h3>
-            <h4>Vueltas: ${result.response[0].laps}</h4>
+            <h4>${result.response[0].name}</h4>
+            <h5>Pais: ${result.response[0].competition.name}</h5>
+            <p>Vueltas: ${result.response[0].laps}</p>
             <p>Tiene una distancia de: ${result.response[0].length}</p>
-        </div>
         </div>
         </div>`;
         document.getElementById("resultado").innerHTML = conteHTML;
